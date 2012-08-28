@@ -3,5 +3,5 @@
  */
 jQuery( function( $ ) {
     console.info('rainbow');
-    mw.util.jsMessage( mw.msg('rainbow-wikitextmsg') );
+    mw.util.jsMessage( mw.msg('rainbow-wikitextmsg', 'Welt' /*mw.user.name()*/ ) );
 });

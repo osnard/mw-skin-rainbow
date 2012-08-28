@@ -18,11 +18,24 @@ class SkinRainbow extends SkinTemplate {
 	var $useHeadElement = true;
 
 	/**
+	 * Initializes output page and sets up skin-specific parameters
+	 * @param $out OutputPage object to initialize
+	 */
+	public function initPage( OutputPage $out ) {
+		parent::initPage( $out );
+
+		$out->addModuleScripts(  'skins.rainbow' );
+		$out->addModuleMessages( 'skins.rainbow' );
+		//$out->addModules( 'skins.rainbow' );
+	}
+	
+	/**
 	 * @param $out OutputPage object
 	 */
 	function setupSkinUserCss( OutputPage $out ){
 		parent::setupSkinUserCss( $out );
-		$out->addModuleStyles( "skins.rainbow" );
+
+		$out->addModuleStyles(   'skins.rainbow' );
 	}
 
 }
