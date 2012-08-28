@@ -22,7 +22,7 @@ class SkinRainbow extends SkinTemplate {
 	 */
 	function setupSkinUserCss( OutputPage $out ){
 		parent::setupSkinUserCss( $out );
-		$out->addModuleStyles( "skins.Rainbow" );
+		$out->addModuleStyles( "skins.rainbow" );
 	}
 
 }
@@ -47,31 +47,44 @@ class RainbowTemplate extends BaseTemplate {
 
 		$this->html( 'headelement' );
 ?>
-
+		<span class="feature-description"><?php $this->msg( 'rainbow-jsmessage' ); ?></span>
 		<div id="mw-js-message" style="display:none;"></div>
+		
+		<span class="feature-description"><?php $this->msg( 'rainbow-newtalk' ); ?></span>
 		<?php if ( $this->data['newtalk'] )    { ?><div class="usermessage"><?php $this->html( 'newtalk' );    ?></div><?php } ?>
+		<span class="feature-description"><?php $this->msg( 'rainbow-sitenotice' ); ?></span>
 		<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice"><?php     $this->html( 'sitenotice' ); ?></div><?php } ?>
-
+		
+		<span class="feature-description"><?php $this->msg( 'rainbow-sitename' ); ?></span>
 		<?php $this->text( 'sitename' ); ?>
 		
-		<?php $this->html( 'title' ); ?>
+		<span class="feature-description"><?php $this->msg( 'rainbow-title' ); ?></span>
 		<h1 id="firstHeading" class="firstHeading"><?php $this->html('title') ?></h1>
+		<span class="feature-description"><?php $this->msg( 'rainbow-content' ); ?></span>
 		<div id="content">
 			<div id="bodyContent">
 				<?php if ( $this->data['isarticle'] ): ?>
+				<span class="feature-description"><?php $this->msg( 'rainbow-tagline' ); ?></span>
 				<div id="siteSub"><?php $this->msg( 'tagline' ); ?></div>
 				<?php endif; ?>
 				
+				<span class="feature-description"><?php $this->msg( 'rainbow-subtitle' ); ?></span>
 				<?php if ( $this->data['subtitle'] ) { ?><div id="contentSub"><?php  $this->html( 'subtitle' ); ?></div><?php } ?>
+				
+				<span class="feature-description"><?php $this->msg( 'rainbow-undelete' ); ?></span>
 				<?php if ( $this->data['undelete'] ) { ?><div id="contentSub2"><?php $this->html( 'undelete' ); ?></div><?php } ?>
 				
+				<span class="feature-description"><?php $this->msg( 'rainbow-bodytext' ); ?></span>
 				<?php $this->html( 'bodytext' ) ?>
 				
+				<span class="feature-description"><?php $this->msg( 'rainbow-catlinks' ); ?></span>
 				<?php $this->html( 'catlinks' ); ?>
 			</div>
 		</div>
+		<span class="feature-description"><?php $this->msg( 'rainbow-dataAfterContent' ); ?></span>
 		<?php $this->html( 'dataAfterContent' ); ?>
 		
+		<span class="feature-description"><?php $this->msg( 'rainbow-personaltools' ); ?></span>
 		<ul>
 		<?php 
 			foreach ( $this->getPersonalTools() as $key => $item ) { 
@@ -80,6 +93,7 @@ class RainbowTemplate extends BaseTemplate {
 		?>
 		</ul>
 		
+		<span class="feature-description"><?php $this->msg( 'rainbow-contentnavigation' ); ?></span>
 		<?php 
 			foreach ( $this->data['content_navigation'] as $category => $tabs ) { 
 				?> <ul>	<?php 
@@ -90,6 +104,7 @@ class RainbowTemplate extends BaseTemplate {
 			} 
 		?>
 		
+		<span class="feature-description"><?php $this->msg( 'rainbow-sidebar' ); ?></span>
 		<?php
 			foreach ( $this->getSidebar() as $boxName => $box ) {
 				?> 
@@ -114,6 +129,7 @@ class RainbowTemplate extends BaseTemplate {
 			}
 		?>
 		
+		<span class="feature-description"><?php $this->msg( 'rainbow-languageurls' ); ?></span>
 		<?php if ( $this->data['language_urls'] ) { ?>
 		<ul>
 		<?php
@@ -124,7 +140,8 @@ class RainbowTemplate extends BaseTemplate {
 			} ?>
 		</ul>
 		<?php } ?>
-			
+		
+		<span class="feature-description"><?php $this->msg( 'rainbow-toolbox' ); ?></span>
 		<ul>
 		<?php
 			foreach ( $this->getToolbox() as $key => $tbitem ) { ?>
@@ -134,13 +151,14 @@ class RainbowTemplate extends BaseTemplate {
 			wfRunHooks( 'SkinTemplateToolboxEnd', array( &$this ) );
 		?>
 		</ul>
-			
+		
+		<span class="feature-description"><?php $this->msg( 'rainbow-search' ); ?></span>
 		<form action="<?php $this->text( 'wgScript' ); ?>">
 			<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
 			<?php echo $this->makeSearchInput( array( 'type' => 'text' ) ); ?>
 		</form>
 		
-			<h2>Footer Links</h2>
+		<span class="feature-description"><?php $this->msg( 'rainbow-footer' ); ?></span>
 		<?php
 		foreach ( $this->getFooterLinks() as $category => $links ) { ?>
 		<ul>
@@ -150,9 +168,10 @@ class RainbowTemplate extends BaseTemplate {
 		<?php } ?>
 		</ul>
 		<?php } ?>
-			
-		<?php $this->msg( 'rainbow-welcome-notification' ); ?>
-		<?php $this->msgWiki( 'rainbow-key' ); ?>
+
+		<?php global $wgUser; ?>
+		<span class="feature-description"><?php $this->msg( 'rainbow-wikitextmsg', $wgUser->getName() ); ?></span>
+		<?php $this->msgWiki( 'rainbow-wikitextmsg', $wgUser->getName() ); ?>
 
 		<?php $this->printTrail(); ?>
 	</body>

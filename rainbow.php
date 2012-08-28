@@ -22,10 +22,17 @@ $wgValidSkinNames['rainbow'] = 'Rainbow';
 $wgAutoloadClasses['SkinRainbow']    = dirname(__FILE__).'/Rainbow.skin.php';
 $wgExtensionMessagesFiles['Rainbow'] = dirname(__FILE__).'/Rainbow.i18n.php';
 
+//http://www.mediawiki.org/wiki/ResourceLoader/Developing_with_ResourceLoader
 $wgResourceModules['skins.rainbow'] = array(
 	'styles' => array(
 		'rainbow/css/screen.css' => array( 'media' => 'screen' ),
 	),
-	'remoteBasePath' => &$GLOBALS['wgStylePath'],
+	'scripts' => array( 
+		'rainbow/js/main.js'
+	),
+	'messages' => array( 
+		'rainbow-wikitextmsg',
+	),
+	'remoteBasePath' => &$GLOBALS['wgStylePath'], //Important: assign only reference as the value may change after registration
 	'localBasePath'  => &$GLOBALS['wgStyleDirectory'],
 );

@@ -1,0 +1,75 @@
+body {
+    font-family: Helvetica,Arial, sans-serif;
+    font-size: 0.8em;
+}
+
+#bodyContent, #content {
+    font-family: Georgia,Palatino,Palatino Linotype,FreeSerif,serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 19px;
+}
+
+.feature-description {
+    font-size: x-small;
+    color: lightblue;
+    font-style: italic;
+}
+
+.firstHeading {
+    padding: 10px;
+}
+
+/* NS_MAIN */
+.ns-0 .firstHeading, .ns-1 .firstHeading {
+    background-color: #6cc8f3;
+}
+
+/* NS_USER */
+.ns-2 .firstHeading, .ns-3 .firstHeading {
+    background-color: #b8d29f;
+}
+
+/* NS_PROJECT */
+.ns-4 .firstHeading, .ns-5 .firstHeading {
+    background-color: #faff90;
+}
+
+/* NS_FILE */
+.ns-6 .firstHeading, .ns-7 .firstHeading {
+    background-color: #b2b2ff;
+}
+
+/* NS_MEDIAWIKI */
+.ns-8 .firstHeading, .ns-9 .firstHeading {
+    background-color: #FFCC66;
+}
+
+/* NS_TEMPLATE */
+.ns-10 .firstHeading, .ns-11 .firstHeading {
+    background-color: #ffc0cb;
+}
+
+/* NS_HELP */
+.ns-12 .firstHeading, .ns-13 .firstHeading {
+    background-color: #C6E746;
+}
+
+/* NS_CATEGORY */
+.ns-14 .firstHeading, .ns-15 .firstHeading {
+    background-color: #5dc9f4;
+}
+
+/* NS_SPECIAL */
+.ns--1 .firstHeading {
+    background-color: #000;
+    color: #FFF;
+}
+
+.action-edit .firstHeading {
+    /* @embed */
+    background-image: url("../images/pencil.png");
+    background-repeat: no-repeat;
+    background-position: 5px 50%;
+    padding-left: 25px;
+}
