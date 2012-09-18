@@ -25,10 +25,12 @@ $wgExtensionMessagesFiles['Rainbow'] = dirname(__FILE__).'/Rainbow.i18n.php';
 //http://www.mediawiki.org/wiki/ResourceLoader/Developing_with_ResourceLoader
 $wgResourceModules['skins.rainbow'] = array(
 	'styles' => array(
-		'rainbow/css/screen.css' => array( 'media' => 'screen' ),
+		'rainbow/css/screen.css'    => array( 'media' => 'screen' ),
+		'rainbow/bootstrap/css/bootstrap.css' => array( 'media' => 'screen' ),
 	),
 	'scripts' => array( 
-		'rainbow/js/main.js'
+		'rainbow/js/main.js',
+		'rainbow/bootstrap/js/bootstrap.js'
 	),
 	'messages' => array( 
 		'rainbow-wikitextmsg',
